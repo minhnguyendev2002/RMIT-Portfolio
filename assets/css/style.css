@@ -186,7 +186,7 @@ header .header {
 
 .main_content_social {
   margin-right: 100px;
-  margin-bottom: 50px;
+  padding-bottom: 160px;
 }
 
 .main_content_social ul {
@@ -342,7 +342,7 @@ header .header {
   overflow: hidden;
 }
 
-.works__main__gallery__item .tooltip {
+#tooltip {
   position: fixed;
   display: block;
   opacity: 0;
@@ -353,17 +353,17 @@ header .header {
   line-height: 30px;
   font-weight: 600;
   padding: 10px 25px;
-  width: auto;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   z-index: 1;
   text-align: left;
+  transition: all .1s;
 }
 
-.works__main__gallery__item .tooltip p {
+.works__main__gallery__item #tooltip p {
   font-size: 18px;
 }
 
-.works__main__gallery__item:hover .tooltip {
+#tooltip.visibiTooltip {
   opacity: 1;
   visibility: visible;
 }
@@ -676,7 +676,7 @@ header .header {
 }
 
 @media screen and (max-width: 1024px) {
-  .works__main__gallery__item:hover .tooltip {
+  #tooltip.visibiTooltip {
     opacity: 0;
     visibility: hidden;
   }

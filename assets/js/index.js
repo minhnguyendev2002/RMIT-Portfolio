@@ -128,20 +128,31 @@ if (gallery) {
             galleryItem.setAttribute("data-aos", "fade-up");
             galleryItem.setAttribute("data-aos-duration", "1000");
             galleryItem.setAttribute("data-aos-delay", `${i*2}00`);
-            galleryItem.innerHTML = `<img src="${works[i].source}" onmousemove="onShowTooltip('${i}')" alt="/"><span class="tooltip"> <h4>${works[i].tooltip}</h4><p>${works[i].description}</p> </span>`;
+            galleryItem.innerHTML = `<img onmousemove="onAddTooltip('${i}')" onmouseenter="onShowTooltip()" onmouseleave="onHideTooltip()" src="${works[i].source}" alt="/">`;
             gallery.appendChild(galleryItem);
+            
         }
     }
 }
 
-function onShowTooltip(item) {
-    let tooltip = document.getElementsByClassName("tooltip")[item];
+function onAddTooltip(item) {
+    let tooltip = document.getElementById("tooltip");
     window.onmousemove = function(e) {
         let x = e.clientX,
             y = e.clientY;
         tooltip.style.top = (y + 20) + 'px';
         tooltip.style.left = (x + 20) + 'px';
     }
+    $("#tooltip-title").html(`${works[item].tooltip}`);
+    $("#tooltip-desc").html(`${works[item].description}`);
+}
+
+function onShowTooltip() {
+    $("#tooltip").addClass("visibiTooltip");
+}
+
+function onHideTooltip() {
+    $("#tooltip").removeClass("visibiTooltip");
 }
 
 const well = document.getElementById("well");
