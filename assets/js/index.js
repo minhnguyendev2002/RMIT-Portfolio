@@ -25,75 +25,93 @@ if (workActionText) {
 const works = [
     {
         source: '/assets/images/works/1.png',
-        tooltip: 'My Product',
+        tooltip: 'PEAR',
+        description: '2021, illustrator',
     },
     {
         source: '/assets/images/works/2.png',
-        tooltip: 'My Product',
+        tooltip: 'MACARON',
+        description: '2020, illustrator',
     },
     {
         source: '/assets/images/works/3.png',
-        tooltip: 'My Product',
+        tooltip: 'TRACE',
+        description: '2021, illustrator',
     },
     {
         source: '/assets/images/works/4.png',
-        tooltip: 'My Product',
+        tooltip: 'LADY',
+        description: '2020, illustrator',
     },
     {
         source: '/assets/images/works/5.png',
-        tooltip: 'My Product',
+        tooltip: 'ÂME SOEUR',
+        description: '2021, illustrator',
     },
     {
         source: '/assets/images/works/6.png',
-        tooltip: 'My Product',
+        tooltip: 'SLAY',
+        description: '2020, illustrator',
     },
     {
         source: '/assets/images/works/7.png',
-        tooltip: 'My Product',
+        tooltip: 'PANIK',
+        description: '2021, illustrator',
     },
     {
         source: '/assets/images/works/8.png',
-        tooltip: 'My Product',
-    },
-    {
-        source: '/assets/images/works/9.png',
-        tooltip: 'My Product',
-    },
-    {
-        source: '/assets/images/works/10.png',
-        tooltip: 'My Product',
-    },
-    {
-        source: '/assets/images/works/11.png',
-        tooltip: 'My Product',
-    },
-    {
-        source: '/assets/images/works/12.png',
-        tooltip: 'My Product',
-    },
-    {
-        source: '/assets/images/works/13.png',
-        tooltip: 'My Product',
-    },
-    {
-        source: '/assets/images/works/14.png',
-        tooltip: 'My Product',
-    },
-    {
-        source: '/assets/images/works/15.png',
-        tooltip: 'My Product',
-    },
-    {
-        source: '/assets/images/works/16.png',
-        tooltip: 'My Product',
+        tooltip: 'LÉON',
+        description: '2022, photograh, illustrator',
     },
     {
         source: '/assets/images/works/17.png',
-        tooltip: 'My Product',
+        tooltip: 'ÂME SOEUR',
+        description: '2020, illustrator',
+    },
+    {
+        source: '/assets/images/works/15.png',
+        tooltip: '"BLUE"',
+        description: '2023, illustrator',
+    },
+    {
+        source: '/assets/images/works/11.png',
+        tooltip: 'SHOES',
+        description: '2021, illustrator',
+    },
+    {
+        source: '/assets/images/works/12.png',
+        tooltip: 'PORTRAIT',
+        description: '2020, illustrator',
+    },
+    {
+        source: '/assets/images/works/13.png',
+        tooltip: 'ROYALTY',
+        description: '2020, illustrator',
+    },
+    {
+        source: '/assets/images/works/10.png',
+        tooltip: 'RANDOM STUFF',
+        description: '2023, illustrator',
+    },
+    {
+        source: '/assets/images/works/16.png',
+        tooltip: '"YELLOW"',
+        description: '2023, illustrator',
     },
     {
         source: '/assets/images/works/18.png',
-        tooltip: 'My Product',
+        tooltip: 'PORTRAIT',
+        description: '2023, illustrator',
+    },
+    {
+        source: '/assets/images/works/14.png',
+        tooltip: 'MY CAT',
+        description: '2021, illustrator',
+    },
+    {
+        source: '/assets/images/works/9.png',
+        tooltip: 'BUBEOBEO',
+        description: '2021, illustrator',
     },
 ];
 
@@ -101,10 +119,9 @@ const gallery = document.getElementById("gallery");
 if (gallery) {
     for (let i = 0; i < works.length; i++) {
         if (gallery) {
-            console.log(i)
             const galleryItem = document.createElement("DIV");
             galleryItem.classList.add("works__main__gallery__item");
-            galleryItem.innerHTML = `<img src="${works[i].source}" onmousemove="onShowTooltip('${i}')" alt="/"><span class="tooltip">${works[i].tooltip}</span>`;
+            galleryItem.innerHTML = `<img src="${works[i].source}" onmousemove="onShowTooltip('${i}')" alt="/"><span class="tooltip"> <h4>${works[i].tooltip}</h4><p>${works[i].description}</p> </span>`;
             gallery.appendChild(galleryItem);
         }
     }
@@ -155,3 +172,22 @@ if (haveYou) {
         cursorChar: '',
     });
 }
+
+
+$(document).ready(function() {
+    $(window).scroll(() => {
+        if(window.scrollY > 300) {
+            $("#fixed-header").addClass("fixed-header-scroll")
+        }else {
+            $("#fixed-header").removeClass("fixed-header-scroll")
+        }
+    })
+
+    $(".menu-button").on("click", function() {
+        $("#nav").addClass("nav-active")
+    })
+
+    $("#hide-menu").on("click", function() {
+        $("#nav").removeClass("nav-active")
+    })
+})
