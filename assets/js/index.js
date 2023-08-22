@@ -1,3 +1,7 @@
+AOS.init({
+    offset: 200,
+});
+
 const homeActionText = document.getElementById("home-action-text");
 if (homeActionText) {
     var typedHome = new Typed('#home-action-text', {
@@ -121,6 +125,9 @@ if (gallery) {
         if (gallery) {
             const galleryItem = document.createElement("DIV");
             galleryItem.classList.add("works__main__gallery__item");
+            galleryItem.setAttribute("data-aos", "fade-up");
+            galleryItem.setAttribute("data-aos-duration", "1000");
+            galleryItem.setAttribute("data-aos-delay", `${i*2}00`);
             galleryItem.innerHTML = `<img src="${works[i].source}" onmousemove="onShowTooltip('${i}')" alt="/"><span class="tooltip"> <h4>${works[i].tooltip}</h4><p>${works[i].description}</p> </span>`;
             gallery.appendChild(galleryItem);
         }

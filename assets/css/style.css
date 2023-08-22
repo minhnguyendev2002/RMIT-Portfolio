@@ -186,6 +186,7 @@ header .header {
 
 .main_content_social {
   margin-right: 100px;
+  margin-bottom: 50px;
 }
 
 .main_content_social ul {
@@ -423,7 +424,7 @@ header .header {
 }
 
 .about__main__experience {
-  padding: 200px 0px;
+  padding-top: 150px;
 }
 
 .about__main__experience__list div {
@@ -675,6 +676,10 @@ header .header {
 }
 
 @media screen and (max-width: 1024px) {
+  .works__main__gallery__item:hover .tooltip {
+    opacity: 0;
+    visibility: hidden;
+  }
   .header__navigation__controls {
     display: inline-block;
   }
